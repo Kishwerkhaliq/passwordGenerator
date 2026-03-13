@@ -1,11 +1,4 @@
 
-import secrets
-import string
-
-# Ask the user for the password length
-len = int(input("Enter the desired password length: "))
-
-
 def generate_password(length=(len-4), use_upper=True, use_lower=True, use_digits=True, use_symbols=True):
     character_pool = ""
 
