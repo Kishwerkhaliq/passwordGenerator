@@ -26,3 +26,17 @@ def generate_password(length=(len-4), use_upper=True, use_lower=True, use_digits
     return password
 
 print("Generated Password:", generate_password(len))
+
+def is_strong_password(password):
+    has_letter = any(char.isalpha() for char in password)
+    has_digit = any(char.isdigit() for char in password)
+    has_special = any(char in string.punctuation for char in password)
+    long_enough = len(password) > 8
+
+    if has_letter and has_digit and has_special and long_enough:
+        return "Password is strong"
+    return "Password is not strong enough"
+    
+print(is_strong_password(password))
+
+# Ben
