@@ -29,4 +29,4 @@ def generate_password(length, use_upper=True, use_lower=True, use_digits=True, u
 
 print("Generated Password:", generate_password(length, use_upper, use_lower, use_digits, use_symbols))
 
-# Ben - Tested code a code runner and didnt work. Have changed slightly so it works. And takes into consideration the user inputs
+# Ben - corrected code so takes into consideration the user inputs and first and second part function as intended
