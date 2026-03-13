@@ -32,11 +32,11 @@ Labels passwords as Not Secure, Fair, Strong, or Very Strong.
 
 
 Optional enforcement loop
-Regenerates passwords until they meet the security policy (can be removed if you only want to assess, not enforce).
+Regenerates passwords until they meet the security policy.
 
 
 Clean, modular design
-Separate functions for length input, generation, policy validation, entropy estimation, and strength rating—easy to test and extend.
+Separate functions for length input, generation, policy validation, entropy estimation, and strength rating, easy to test and extend.
 
 
 Clear user feedback
