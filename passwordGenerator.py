@@ -16,7 +16,9 @@ def ask_length(min_len=8):
                 print(f"Length must be at least {min_len}. Please try again.")
         except ValueError:
             print("Please enter a whole number.")
+#
 # Kishwer part
+#Generate the password which contains charactors, special characters and digits align with the required length (taken from user). the function takes user's required length as an input
 def generate_password(length, use_upper=True, use_lower=True, use_digits=True, use_symbols=True):
     character_pool = ""
 
@@ -34,7 +36,7 @@ def generate_password(length, use_upper=True, use_lower=True, use_digits=True, u
 
     password = "".join(secrets.choice(character_pool) for _ in range(length))
     return password
-
+#the generated password should meet the minimum password policy. this function verify it
 def is_secure(pw, min_len=8):
     """Return True if password meets minimum policy."""
     if len(pw) < min_len:
@@ -44,7 +46,8 @@ def is_secure(pw, min_len=8):
     has_digit = any(c.isdigit() for c in pw)
     has_symbol = any(c in SYMBOLS for c in pw)
     return has_upper and has_lower and has_digit and has_symbol
-
+    
+#function defines the entropy of the generated password
 def estimate_entropy_bits(pw):
     """Rough entropy estimate based on the size of the character set actually used."""
     charset = 0
@@ -60,7 +63,9 @@ def estimate_entropy_bits(pw):
     if charset == 0:
         return 0.0
     return len(pw) * math.log2(charset)
+    
 #ben Part
+#define below function rate the strength of the generated password as fair, strong, very strong on the bases of calculated entropy and policy
 def rate_strength(pw):
     """Return a simple label based on entropy and policy."""
     entropy = estimate_entropy_bits(pw)
@@ -78,6 +83,7 @@ def rate_strength(pw):
 #print("Generated Password:", generate_password(len))
 
 if __name__ == "__main__":
+    #input taken for the required length from the user
     length = ask_length(8)
     # print("Your secure password is:", generate_password(length))
 
