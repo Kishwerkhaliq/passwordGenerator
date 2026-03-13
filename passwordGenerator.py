@@ -1,13 +1,17 @@
-import secrets
 import string
+import secrets
 
 # Ask the user for the password length
-len = int(input("Enter the desired password length: "))
+length = int(input("Enter the desired password length: "))
+use_upper = input("Include uppercase letters? (y/n): ").lower() == "y"
+use_lower = input("Include lowercase letters? (y/n): ").lower() == "y"
+use_digits = input("Include numbers? (y/n): ").lower() == "y"
+use_symbols = input("Include symbols? (y/n): ").lower() == "y"
 # Faith 
 
 
 
-def generate_password(length=(len-4), use_upper=True, use_lower=True, use_digits=True, use_symbols=True):
+def generate_password(length, use_upper=True, use_lower=True, use_digits=True, use_symbols=True):
     character_pool = ""
 
     if use_upper:
